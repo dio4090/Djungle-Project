@@ -2,6 +2,12 @@
 
 
 {% block body %}
+    {% for tuite in tuites %}
+        <div>
+            {{ tuite }}
+        </div>
+    {% endfor %}
+
     SUBISTITUINDO
     {% include 'includes/card.html' %}
 {% endblock %}

@@ -9,6 +9,8 @@
 <body>
  
     <h1>Olá Jovem</h1>
+    {% include 'includes/menu.html' %}
+
     <!-- {% lorem 1 p %} -->
 
     <!-- {% if user.is_authenticated %}
@@ -17,24 +19,23 @@
         SAI DAQUI
     {% endif %} -->
 
-    {% for number in "123456" %}
-        <div style="color: {% if forloop.first or forloop.last %}brown{% else %}blue{% endif %}; border: 1px solid black";>
-            {{ number }}
-        </div>
-    {% endfor %}
-    
-    <form method="phost">
-        {% csrf_token %}
-        <input type="text" name="name" placeholder="Nome">
-        <input type="submit" name="Enviar">
-    </form>
-
     {% block body %}
         {{ now }}
     {% endblock %}
 
     <footer>
-        {% block footer %} Este é meu footer {% endblock %}
+        {% block footer %} 
+        <br/>
+        Este é meu footer 
+        <br/>
+        {% endblock %}
     </footer>
+
+
+    {% for number in "123456" %}
+        <div style=" color: {% if forloop.first or forloop.last %}brown{% else %}blue{% endif %}; border: 1px solid black";>
+            {{ number }}
+        </div>
+    {% endfor %}
 </body>
 </html>

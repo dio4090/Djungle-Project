@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from core.helpers import print_name, get_character_name
 from random import randint
 from datetime import *
+from tuites.models import Tuite
 
 # Create your views here.
 def index(request):
@@ -11,7 +12,7 @@ def index(request):
 
     context = {
         'now' : datetime.now(),
-        'my_name' : 'Diogo',
+        'tuites' : Tuite.objects.all(),
     }
 
     return render(request, 'home.html', context)
